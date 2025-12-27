@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gentle Air | Premium HVAC Services</title>
+    <meta name="description" content="Professional HVAC services in Houston. 24/7 Emergency AC repair.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --hvac-blue: #2563eb;
+            --hvac-dark: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
+        }
+
+        /* Improved Container Margins */
+        .content-container {
+            width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .content-container {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4), transparent);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 py-6">
+        <div class="content-container flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-blue-600 p-2 rounded-xl shadow-lg">
+                    <i data-lucide="wind" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tighter nav-logo text-white">
+                    GENTLE<span class="text-blue-500">AIR</span>
+                </span>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center gap-10 font-semibold nav-links text-white">
+                <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
+                <a href="#why-us" class="hover:text-blue-400 transition-colors">Why Choose Us</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                <a href="tel:7135550123" class="flex items-center gap-2 bg-blue-600 text-white px-7 py-3 rounded-full hover:bg-blue-700 shadow-xl transition-all active:scale-95">
+                    <i data-lucide="phone" class="w-4 h-4 fill-current"></i>
+                    <span>(713) 555-0123</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="lg:hidden p-2 text-white nav-icon">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-2xl p-10 flex flex-col gap-6 font-bold border-t text-xl text-slate-800">
+            <a href="#services" onclick="toggleMenu()">Services</a>
+            <a href="#why-us" onclick="toggleMenu()">Why Choose Us</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+            <a href="tel:7135550123" class="bg-blue-600 text-white p-5 rounded-2xl text-center flex items-center justify-center gap-3">
+                <i data-lucide="phone" class="w-6 h-6"></i> (713) 555-0123
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="HVAC Technician at Work">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="content-container relative z-10 pt-24 pb-12 lg:pt-32">
+            <div class="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left-10 duration-1000">
+                <div class="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-md border border-blue-400/30 px-5 py-2.5 rounded-full text-blue-100 font-bold text-sm tracking-wide uppercase">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                    </span>
+                    Available 24/7 For Emergencies
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-8xl font-extrabold text-white leading-[1.05] tracking-tight">
+                    Cool Comfort <br>
+                    <span class="text-blue-500">Delivered Fast.</span>
+                </h1>
+                
+                <p class="text-lg md:text-2xl text-slate-200 max-w-2xl leading-relaxed opacity-90">
+                    Trusted HVAC specialists for Houston homeowners. From emergency repairs to full system upgrades, we keep your air gentle and your home perfect.
+                </p>
+
+                <div class="flex flex-wrap gap-5 pt-6">
+                    <a href="tel:7135550123" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center gap-3 transition-all shadow-2xl shadow-blue-600/30 active:scale-95">
+                        <i data-lucide="phone" class="w-6 h-6 fill-current"></i> Call (713) 555-0123
+                    </a>
+                    <a href="#contact" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/40 px-10 py-5 rounded-2xl font-bold text-lg transition-all">
+                        Book Online
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGO STRIP / TRUST -->
+    <div class="bg-white border-b py-10">
+        <div class="content-container flex flex-wrap justify-center lg:justify-between items-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            <span class="text-xl font-bold">CARRIER</span>
+            <span class="text-xl font-bold">TRANE</span>
+            <span class="text-xl font-bold">LENNOX</span>
+            <span class="text-xl font-bold">GOODMAN</span>
+            <span class="text-xl font-bold">RHEEM</span>
+        </div>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 lg:py-32">
+        <div class="content-container">
+            <div class="max-w-3xl mb-16 lg:mb-24">
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-slate-900 mb-8 tracking-tighter">Expert Solutions for Your Air</h2>
+                <p class="text-xl text-slate-600 leading-relaxed">We specialize in all aspects of residential cooling and heating, ensuring your environment remains healthy and comfortable year-round.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10 lg:gap-14">
+                <!-- Service 1 -->
+                <div class="service-card reveal group space-y-6">
+                    <div class="aspect-video rounded-[2.5rem] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Repair">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-2xl font-extrabold mb-4">Rapid Repair</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Diagnostic expertise to fix leaks, electrical failures, and mechanical noise on all major brands.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 font-bold text-blue-600 group-hover:gap-4 transition-all">Request Help <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card reveal group space-y-6">
+                    <div class="aspect-video rounded-[2.5rem] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Installation">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-2xl font-extrabold mb-4">Precision Install</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Upgrading to SEER2 efficiency models that lower your monthly energy consumption instantly.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 font-bold text-blue-600 group-hover:gap-4 transition-all">Free Quote <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card reveal group space-y-6">
+                    <div class="aspect-video rounded-[2.5rem] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Maintenance">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-2xl font-extrabold mb-4">Care Plan</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Regular tune-ups to extend the life of your unit and prevent expensive mid-summer breakdowns.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 font-bold text-blue-600 group-hover:gap-4 transition-all">View Plans <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us" class="py-24 lg:py-32 bg-slate-900 text-white">
+        <div class="content-container grid lg:grid-cols-2 gap-20 items-center">
+            <div class="space-y-12">
+                <h2 class="text-4xl lg:text-6xl font-extrabold tracking-tight">Built on Trust, <br>Focused on Comfort.</h2>
+                
+                <div class="space-y-10">
+                    <div class="flex gap-6">
+                        <div class="bg-blue-600 w-16 h-16 shrink-0 flex items-center justify-center rounded-2xl">
+                            <i data-lucide="award" class="text-white w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-2">Licensed Professionals</h4>
+                            <p class="text-slate-400 text-lg">Every member of our crew is NATE-certified and fully insured for residential work.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="bg-slate-800 w-16 h-16 shrink-0 flex items-center justify-center rounded-2xl">
+                            <i data-lucide="shield-check" class="text-blue-500 w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-2">Honest Flat-Rate Pricing</h4>
+                            <p class="text-slate-400 text-lg">No surprises. We quote the price before we start, regardless of how long the job takes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Technician" class="rounded-[3rem] shadow-2xl w-full aspect-[4/5] object-cover">
+                <div class="absolute -bottom-8 -left-8 bg-blue-600 p-8 rounded-3xl hidden md:block">
+                    <p class="text-5xl font-black mb-1">15+</p>
+                    <p class="font-bold text-blue-100 uppercase tracking-widest text-sm">Years in Houston</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 lg:py-32 bg-white">
+        <div class="content-container">
+            <div class="bg-slate-50 rounded-[4rem] overflow-hidden grid lg:grid-cols-2 shadow-sm border border-slate-100">
+                <div class="p-10 lg:p-20 space-y-10">
+                    <div>
+                        <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">Let's Get You <br>Comfortable.</h2>
+                        <p class="text-xl text-slate-600">Fill out the form or call us directly. We'll have a technician at your door in no time.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6">
+                            <div class="bg-white p-4 rounded-2xl shadow-sm"><i data-lucide="phone" class="text-blue-600 w-6 h-6"></i></div>
+                            <span class="text-2xl font-black">(713) 555-0123</span>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="bg-white p-4 rounded-2xl shadow-sm"><i data-lucide="mail" class="text-blue-600 w-6 h-6"></i></div>
+                            <span class="text-xl font-bold">service@gentleair.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 lg:p-20">
+                    <form id="contactForm" class="grid gap-6">
+                        <input type="text" id="name" required placeholder="Full Name" class="w-full px-7 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none transition-all">
+                        <input type="tel" id="phone" required placeholder="Phone Number" class="w-full px-7 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none transition-all">
+                        <select class="w-full px-7 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none transition-all appearance-none">
+                            <option>Repair Service</option>
+                            <option>New Quote</option>
+                            <option>Maintenance</option>
+                        </select>
+                        <textarea rows="4" placeholder="How can we help?" class="w-full px-7 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none transition-all"></textarea>
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-black text-white font-bold py-6 rounded-2xl text-lg transition-all shadow-xl active:scale-[0.98]">
+                            Send Service Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-20 bg-slate-950 text-slate-500">
+        <div class="content-container">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 border-b border-white/5 pb-10 mb-10">
+                <div class="flex items-center gap-2">
+                    <div class="bg-blue-600 p-2 rounded-xl"><i data-lucide="wind" class="text-white w-6 h-6"></i></div>
+                    <span class="text-2xl font-black text-white tracking-tighter uppercase">Gentle Air</span>
+                </div>
+                <div class="flex gap-10 font-bold text-white uppercase text-xs tracking-[0.2em]">
+                    <a href="#services" class="hover:text-blue-500 transition">Services</a>
+                    <a href="#why-us" class="hover:text-blue-500 transition">Why Us</a>
+                    <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between text-sm gap-4">
+                <p>© 2025 Gentle Air HVAC. Licensed Houston Service Provider.</p>
+                <p>Designed for absolute comfort.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Logic -->
+    <script>
+        lucide.createIcons();
+
+        // Reveal Animation on Scroll
+        const reveals = document.querySelectorAll('.reveal');
+        function reveal() {
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Nav Scroll Effect
+        const nav = document.getElementById('main-nav');
+        const logo = document.querySelector('.nav-logo');
+        const links = document.querySelector('.nav-links');
+        const icon = document.querySelector('.nav-icon');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                nav.classList.add('glass-nav', 'py-4');
+                nav.classList.remove('py-6');
+                logo.classList.remove('text-white');
+                logo.classList.add('text-slate-900');
+                links.classList.remove('text-white');
+                links.classList.add('text-slate-600');
+                icon.classList.remove('text-white');
+                icon.classList.add('text-slate-900');
+            } else {
+                nav.classList.remove('glass-nav', 'py-4');
+                nav.classList.add('py-6');
+                logo.classList.add('text-white');
+                logo.classList.remove('text-slate-900');
+                links.classList.add('text-white');
+                links.classList.remove('text-slate-600');
+                icon.classList.add('text-white');
+                icon.classList.remove('text-slate-900');
+            }
+        });
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        function toggleMenu() { mobileMenu.classList.toggle('hidden'); }
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Form Submit
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Request sent successfully! Our Houston dispatch will contact you shortly.");
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
